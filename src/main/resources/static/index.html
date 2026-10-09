@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Book</title><link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="/">cb<span>Contact Book</span></a><span class="local">Your personal directory</span></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">PEOPLE, ALL IN ONE PLACE</p><h1>Keep in touch.</h1><p>A simple home for the people who matter.</p></div><span class="badge">Spring Boot + JDBC</span></div>
+    <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+    <div class="layout">
+      <section class="panel editor" aria-labelledby="formTitle">
+        <p class="eyebrow">CONTACT DETAILS</p><h2 id="formTitle">Add a contact</h2>
+        <form id="contactForm">
+          <label for="name">Full name <span>*</span></label><input id="name" name="name" maxlength="100" autocomplete="name" placeholder="e.g. Mohamed Ishaq" required>
+          <label for="phone">Phone number <span>*</span></label><input id="phone" name="phone" type="tel" minlength="7" maxlength="25" autocomplete="tel" placeholder="e.g. +91 98765 43210" required>
+          <label for="email">Email <small>optional</small></label><input id="email" name="email" type="email" maxlength="150" autocomplete="email" placeholder="name@example.com">
+          <label for="address">Address <small>optional</small></label><textarea id="address" name="address" maxlength="300" autocomplete="street-address" rows="3" placeholder="City or full address"></textarea>
+          <button class="primary" id="saveButton" type="submit">Save contact</button>
+          <button class="secondary" id="cancelButton" type="button" hidden>Cancel editing</button>
+        </form><p class="hint">* Required fields. Your contacts are saved in the application's database.</p>
+      </section>
+      <section class="panel directory" aria-labelledby="directoryTitle">
+        <div class="directoryHeading"><h2 id="directoryTitle">Your contacts</h2><span id="count" class="count">0</span></div>
+        <label class="searchLabel" for="search">Search contacts</label><input id="search" type="search" maxlength="300" placeholder="Search by name, phone, email or address…">
+        <div id="contacts" class="contacts" aria-live="polite"><p class="empty">Loading contacts…</p></div>
+      </section>
+    </div>
+  </main><footer>Contact Book · Small details. Meaningful connections.</footer>
+</body>
+</html>
